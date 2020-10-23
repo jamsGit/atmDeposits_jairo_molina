@@ -1,0 +1,20 @@
+# Spring properties
+spring:
+  application:
+    name: ATMDeposit  # Service registers under this name
+  freemarker:
+    enabled: false           # Ignore Eureka dashboard FreeMarker templates
+  #thymeleaf:
+    #cache: false             # Allow Thymeleaf templates to be reloaded at runtime
+    #prefix: classpath:/templates/    # Trailing / mandatory
+                             # Template location for this application only
+
+# Discovery Server Access
+eureka:
+  client:
+      service-url:
+        defaultZone: http://localhost:9005/eureka/
+
+# HTTP Server
+server:
+ port: ${PORT:${SERVER_PORT:0}}
